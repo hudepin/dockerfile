@@ -1,7 +1,7 @@
 def label = "slave-${UUID.randomUUID().toString()}"
 pipeline {
     agent any
-	parameters(string defalutValue:'',description:'请输入代码路径,GIT只需要输入SHA值,SVN需要输入完整的路径和版本号'，name: 'CODE_PATH',trim:true)
+	parameters{string defalutValue:'',description:'请输入代码路径,GIT只需要输入SHA值,SVN需要输入完整的路径和版本号'，name: 'CODE_PATH',trim:true}
     stages{
 		stage('0.定义slave名称'){
 			steps{
